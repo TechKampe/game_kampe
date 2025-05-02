@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Choose Your Fighter</title>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script>
+  <style>
+    body { margin: 0; background: #000; }
+    canvas { display: block; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+<script>
+const config = {
+  type: Phaser.AUTO,
+  width: 540,
+  height: 960,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  },
+  scene: {
+    preload,
+    create,
+    update
+  }
+};
+
+const characters = ['char1', 'char2', 'char3', 'char4'];
+let currentIndex = 0;
+let currentCharacter;
+
+const game = new Phaser.Game(config);
+
+function preload() {
+  this.load.image('background', 'res/bg.png');
+  characters.forEach((key, i) => {
+    this.load.image(key, `res/${key}.png`);
+    this.load.image(`portrait${i}`, `res/portrait${i+1}.png`);
+  });
+}
+
+function create() {
+  this.add.image(270, 480, 'background').setScale(0.8);
+
+  currentCharacter = this.add.sprite(270, 400, characters[currentIndex]).setScale(0.8);
+
+  // Float animation
+  this.tweens.add({
+    targets: currentCharacter,
+    y: '+=10',
+    duration: 1000,
+    yoyo: true,
+    repeat: -1,
+    ease: 'Sine.easeInOut'
+  });
+
+  // Buttons
+  characters.forEach((key, i) => {
+    const btn = this.add.image(90 + i * 120, 850, `portrait${i}`).setInteractive().setScale(0.6);
+    btn.on('pointerdown', () => switchCharacter.call(this, i));
+  });
+}
+
+function switchCharacter(index) {
+  if (index === currentIndex) return;
+
+  const newChar = this.add.sprite(540 + 200, 400, characters[index]).setScale(0.8);
+  this.tweens.add({
+    targets: currentCharacter,
+    x: -200,
+    duration: 400,
+    ease: 'Cubic.easeIn',
+    onComplete: () => currentCharacter.destroy()
+  });
+  this.tweens.add({
+    targets: newChar,
+    x: 270,
+    duration: 400,
+    ease: 'Cubic.easeOut',
+    onComplete: () => {
+      currentCharacter = newChar;
+      this.tweens.add({
+        targets: currentCharacter,
+        y: '+=10',
+        duration: 1000,
+        yoyo: true,
+        repeat: -1,
+        ease: 'Sine.easeInOut'
+      });
+    }
+  });
+
+  currentIndex = index;
+}
+
+function update() {
+  // Not needed for now
+}
+</script>
+
+</body>
+</html>
