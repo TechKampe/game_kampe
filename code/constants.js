@@ -5,7 +5,6 @@ export const CENTER_X = GAME_WIDTH / 2;
 export const CENTER_Y = GAME_HEIGHT / 2;
 
 export const CHARACTER_Y = 470;
-export const CHARACTER_SCALE = 0.7;
 
 export const BUTTON_WIDTH = 200;
 export const BUTTON_HEIGHT = 50;

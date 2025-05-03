@@ -5,7 +5,6 @@ import {
   CENTER_X,
   CENTER_Y,
   CHARACTER_Y,
-  CHARACTER_SCALE,
   BUTTON_WIDTH,
   BUTTON_HEIGHT,
   BUTTON_Y
@@ -38,7 +37,7 @@ WebFont.load({
 });
 
 function preload() {
-  this.load.image('background', 'res/bg.png');
+  this.load.image('background', 'res/bg.jpg');
   characters.forEach((key, i) => {
     this.load.image(key, `res/${key}.png`);
     this.load.image(`portrait${i}`, `res/portrait${i + 1}.png`);
@@ -47,7 +46,7 @@ function preload() {
 
 function create() {
   this.add.image(CENTER_X, GAME_HEIGHT / 2, 'background');
-  currentCharacter = this.add.sprite(CENTER_X, CHARACTER_Y, characters[currentIndex]).setScale(CHARACTER_SCALE);
+  currentCharacter = this.add.sprite(CENTER_X, CHARACTER_Y, characters[currentIndex]);
 
   this.tweens.add({
     targets: currentCharacter,
@@ -59,7 +58,7 @@ function create() {
   });
 
   characters.forEach((key, i) => {
-    const btn = this.add.image(90 + i * 120, 850, `portrait${i}`).setInteractive().setScale(0.6);
+    const btn = this.add.image(90 + i * 120, 850, `portrait${i}`).setInteractive();
     btn.on('pointerdown', () => switchCharacter.call(this, i));
   });
 
@@ -89,7 +88,7 @@ function switchCharacter(index) {
   statTexts.forEach(t => t.destroy());
   statTexts = [];
 
-  const newChar = this.add.sprite(GAME_WIDTH + 200, CHARACTER_Y, characters[index]).setScale(CHARACTER_SCALE);
+  const newChar = this.add.sprite(GAME_WIDTH + 200, CHARACTER_Y, characters[index]);
   this.tweens.add({ targets: currentCharacter, x: -200, duration: 400, ease: 'Cubic.easeIn', onComplete: () => currentCharacter.destroy() });
 
   this.children.bringToTop(chooseBtn);
