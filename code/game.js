@@ -1,12 +1,13 @@
 const config = {
   type: Phaser.AUTO,
-  width: '100%',
-  height: '100%',
+  width: GAME_WIDTH,
+  height: GAME_HEIGHT,
   backgroundColor: '#0061b5',
   parent: 'game',
+  resolution: window.devicePixelRatio,
   scale: {
     mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+    autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
   },
   scene: [LobbyScene], 
 };

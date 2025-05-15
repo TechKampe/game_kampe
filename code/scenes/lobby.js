@@ -9,7 +9,7 @@ function createPassCard(scene, pass, y, container) {
     color: '#F7D810',
     align: 'center',
     wordWrap: { width: 180, useAdvancedWrap: true },
-  }).setOrigin(0.12, 0.7);
+  }).setOrigin(0.12, 0.7).setResolution(window.devicePixelRatio);
 
   container.add(passTitleText);
 
@@ -24,7 +24,7 @@ function createPassCard(scene, pass, y, container) {
       fontFamily: 'BurbankBigCondensed',
       color: '#003466',
       align: 'center',
-    }).setOrigin(0.5, -1.7);
+    }).setOrigin(0.5, -1.7).setResolution(window.devicePixelRatio);
   
     container.add(detailsPassText);
 
@@ -42,7 +42,7 @@ function createPassCard(scene, pass, y, container) {
       fontFamily: 'BurbankBigCondensed',
       color: '#003466',
       align: 'center',
-    }).setOrigin(0.5, -1.05);
+    }).setOrigin(0.5, -1.05).setResolution(window.devicePixelRatio);
   
     container.add(askPassText);
   }
@@ -78,12 +78,14 @@ class LobbyScene extends Phaser.Scene {
     const spacing = 250;
     const topMargin = 200;
   
+    console.log('devicePixelRatio:', window.devicePixelRatio);
+
     const titleText = this.add.text(this.cameras.main.centerX, 40, "PASES DE CARRERA", {
       fontSize: '45px',
       fontFamily: 'BurbankBigCondensed',
       color: '#ffffff',
       align: 'center',
-    }).setOrigin(0.5);
+    }).setOrigin(0.5).setResolution(window.devicePixelRatio);
     titleText.setScrollFactor(1); // scrolls with the camera
 
     container.add(titleText);
