@@ -42,4 +42,10 @@ align: 'center',
 
 const SHADOW_SETTINGS = [2, 2, '#000000', 0, true, true];
 
-
+const PASS_DETAILS_TITLE_STYLE = {
+    fontSize: '25px',
+    fontFamily: 'BurbankBigCondensed',
+    color: '#ffffff',
+    align: 'center',
+    wordWrap: { width: 340, useAdvancedWrap: true },
+};

@@ -24,7 +24,7 @@ function createPassCard(scene, pass, y, container) {
 
   if (pass.unlocked) {
     image.setInteractive().on('pointerdown', () => {
-      alert(`Accediendo a: ${pass.title}`);
+      scene.scene.start('PassDetailsScene', { pass }); // pass data to next scene
     });
 
     const progress = Math.floor((pass.tasksDone / pass.tasksMax) * 100);
