@@ -1,6 +1,5 @@
 function createPassCard(scene, pass, y, container) {
   const image = scene.add.image(GAME_WIDTH / 2, y, 'passCard').setDisplaySize(360, 210);
-
   container.add(image);
 
   const passTitleText = scene.add.text(image.x, image.y, pass.title.toUpperCase(), {
@@ -9,7 +8,7 @@ function createPassCard(scene, pass, y, container) {
     color: '#F7D810',
     align: 'center',
     wordWrap: { width: 180, useAdvancedWrap: true },
-  }).setOrigin(0.12, 0.7).setResolution(window.devicePixelRatio);
+  }).setOrigin(0.12, 0.7).setResolution(window.devicePixelRatio).setShadow(3, 3, SHADOW_COLOR, 0, true, true);
 
   container.add(passTitleText);
 
@@ -42,9 +41,13 @@ function createPassCard(scene, pass, y, container) {
       fontFamily: 'BurbankBigCondensed',
       color: '#003466',
       align: 'center',
-    }).setOrigin(0.5, -1.05).setResolution(window.devicePixelRatio);
+    }).setOrigin(0.5, -1.05).setResolution(window.devicePixelRatio).setShadow(2, 2, SHADOW_COLOR, 0, true, true);
   
     container.add(askPassText);
+
+    const imageLock = scene.add.image(GAME_WIDTH / 2, y, 'lock').setDisplaySize(80, 80);
+    imageLock.setTint(0x999999); // grey tint
+    container.add(imageLock);
   }
 }
 
@@ -70,6 +73,7 @@ class LobbyScene extends Phaser.Scene {
 
   preload() {
     this.load.image('passCard', 'res/passCard.png');
+    this.load.image('lock', 'res/lock.png');
     this.load.font('BurbankBigCondensed', 'res/BurbankBigCondensed-Black.otf', 'opentype');
   }
 
@@ -85,7 +89,7 @@ class LobbyScene extends Phaser.Scene {
       fontFamily: 'BurbankBigCondensed',
       color: '#ffffff',
       align: 'center',
-    }).setOrigin(0.5).setResolution(window.devicePixelRatio);
+    }).setOrigin(0.5).setResolution(window.devicePixelRatio).setShadow(4, 4, SHADOW_COLOR, 0, true, true);
     titleText.setScrollFactor(1); // scrolls with the camera
 
     container.add(titleText);
