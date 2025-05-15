@@ -51,11 +51,11 @@ function createPassCard(scene, pass, y, container) {
 function createProgressBar(scene, x, y, width, height, percentage) {
   const background = scene.add.graphics();
   background.fillStyle(0x333333, 1);
-  background.fillRoundedRect(0, 0, width, height, 8);
+  background.fillRoundedRect(0, 0, width, height, 4);
 
   const bar = scene.add.graphics();
   bar.fillStyle(0x00cc66, 1);
-  bar.fillRoundedRect(0, 0, (width * percentage) / 100, height, 8);
+  bar.fillRoundedRect(0, 0, (width * percentage) / 100, height, 4);
 
   // Place both graphics in a sub-container so they move together
   const barContainer = scene.add.container(x, y, [background, bar]);
