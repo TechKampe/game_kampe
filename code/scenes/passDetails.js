@@ -66,31 +66,52 @@ class PassDetailsScene extends Phaser.Scene {
       }).setShadow(2, 2, '#000', 0, true, true);
       container.add(title);
   
-      const progress = Math.floor((phase.tasksDone / phase.tasksTotal) * 100);
-      const progressLabel = this.add.text(card.x, y - 70, `Progreso: ${progress}%`, {
-        fontSize: '18px',
+      const progressLabel = this.add.text(card.x - 155, y - 31, `${phase.tasksDone} / ${phase.tasksTotal}`, {
+        fontSize: '17px',
         fontFamily: 'BurbankBigCondensed',
         color: '#00ff66',
-      }).setOrigin(0.5);
+      });
       container.add(progressLabel);
   
+      const progress = Math.floor((phase.tasksDone / phase.tasksTotal) * 100);
+      const progressBar = this.createProgressBar(card.x - 155, y - 8, 310, 14, progress);
+      container.add(progressBar);
+
       // Dummy buttons
-      const btn1 = this.createButton(card.x - 70, y + 80, "Ver Items");
-      const btn2 = this.createButton(card.x + 70, y + 80, "Ver Tareas");
-  
+      const btn1 = this.add.text(card.x + 140, y + 47, " Ver todas", {
+            fontSize: '16px',
+            fontFamily: 'BurbankBigCondensed',
+            color: '#ffffff',
+            backgroundColor: '#0061b5',
+            align: 'center',
+            wordWrap: { width: 40, useAdvancedWrap: true },
+            padding: { left: 10, right: 10, top: 5, bottom: 5 },
+        }).setOrigin(0.5).setInteractive();
+
+      const btn2 = this.add.text(card.x, y + 128, "MOSTRAR TAREAS", {
+            fontSize: '36px',
+            fontFamily: 'BurbankBigCondensed',
+            color: '#ffffff',
+            backgroundColor: 'transparent',
+            align: 'center',
+            padding: { left: 10, right: 10, top: 5, bottom: 5 },
+        }).setOrigin(0.5).setInteractive();
+
       container.add(btn1);
       container.add(btn2);
     }
-  
-    createButton(x, y, label) {
-      return this.add.text(x, y, label, {
-        fontSize: '16px',
-        fontFamily: 'BurbankBigCondensed',
-        color: '#ffffff',
-        backgroundColor: '#0061b5',
-        padding: { left: 10, right: 10, top: 5, bottom: 5 },
-      }).setOrigin(0.5).setInteractive();
-    }
+
+    createProgressBar(x, y, width, height, percentage) {
+        const bg = this.add.graphics();
+        bg.fillStyle(0x0061b5, 1);
+        bg.fillRoundedRect(0, 0, width, height, 4);
+      
+        const fg = this.add.graphics();
+        fg.fillStyle(0x57BE70, 1);
+        fg.fillRoundedRect(0, 0, (width * percentage) / 100, height, 4);
+      
+        return this.add.container(x, y, [bg, fg]);
+      }
   }
   
   window.PassDetailsScene = PassDetailsScene;

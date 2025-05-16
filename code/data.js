@@ -6,9 +6,9 @@ const careerPasses = [
     tasksDone: 18,
     tasksMax: 50,
     phases: [
-      { title: "Fase 1 - Introducción", tasksDone: 3, tasksTotal: 5 },
-      { title: "Fase 2 - Documentación", tasksDone: 1, tasksTotal: 5 },
-      { title: "Fase 3 - Primeros pasos", tasksDone: 0, tasksTotal: 10 },
+      { title: "Fase 1 Introducción", tasksDone: 12, tasksTotal: 25 },
+      { title: "Fase 2 Documentación", tasksDone: 2, tasksTotal: 5 },
+      { title: "Fase 3 Primeros pasos", tasksDone: 3, tasksTotal: 10 },
     ]
   },
   {
