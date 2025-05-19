@@ -30,7 +30,7 @@ const careerPasses = [
           },
           {
             title: "Descripción de los oficios",
-            is_active: true,
+            is_active: false,
             reward_xp_empleabilidad: 5,
             reward_xp_formacion: 15,
             reward_xp_comunidad: 0
@@ -44,7 +44,7 @@ const careerPasses = [
           },
           {
             title: "Preparación de presentación personal",
-            is_active: true,
+            is_active: false,
             reward_xp_empleabilidad: 10,
             reward_xp_formacion: 5,
             reward_xp_comunidad: 5
@@ -79,14 +79,14 @@ const careerPasses = [
           },
           {
             title: "Permiso de trabajo",
-            is_active: true,
+            is_active: false,
             reward_xp_empleabilidad: 10,
             reward_xp_formacion: 5,
             reward_xp_comunidad: 5
           },
           {
             title: "Cursos y títulos",
-            is_active: true,
+            is_active: false,
             reward_xp_empleabilidad: 10,
             reward_xp_formacion: 5,
             reward_xp_comunidad: 5

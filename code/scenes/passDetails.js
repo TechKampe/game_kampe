@@ -72,6 +72,9 @@ class PassDetailsScene extends Phaser.Scene {
     // Buttons
     const viewAllButton = this.createButton(card.x + 140, y + 47, ' Ver todas', '16px', '#0061b5');
     const showTasksButton = this.createButton(card.x, y + 128, 'MOSTRAR TAREAS', '36px', 'transparent');
+      showTasksButton.on('pointerup', () => {
+        this.scene.start('TasksScene', { phase });
+      });
 
     container.add(viewAllButton);
     container.add(showTasksButton);

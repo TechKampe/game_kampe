@@ -9,7 +9,7 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
   },
-  scene: [LobbyScene, PassDetailsScene], 
+  scene: [LobbyScene, PassDetailsScene, TasksScene], 
 };
 
 new Phaser.Game(config);
