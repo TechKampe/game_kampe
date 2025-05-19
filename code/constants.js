@@ -49,3 +49,15 @@ const PASS_DETAILS_TITLE_STYLE = {
     align: 'center',
     wordWrap: { width: 340, useAdvancedWrap: true },
 };
+
+const REWARD_RARITY_COLOR = {
+  'COMÚN': '#AAAAAA',
+  'RARA': '#4169E1',
+  'ÉPICA': '#800080',
+  'ULTRA': '#FFD700'
+};
+
+const PHASE_CARD_WIDTH = 360;
+const PHASE_CARD_HEIGHT = 342;
+const PHASE_CARD_SPACING = 360;
+const PHASE_CARD_TOP_MARGIN = 260;
