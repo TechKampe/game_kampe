@@ -15,6 +15,20 @@ class PassDetailsScene extends Phaser.Scene {
     const { pass } = data;
     const container = this.add.container(0, 0);
 
+    const backButton = this.add.text(20, 20, '← VOLVER', {
+      fontSize: '20px',
+      fontFamily: 'BurbankBigCondensed',
+      color: '#ffffff',
+      backgroundColor: '#0061b5',
+      padding: { left: 10, right: 10, top: 5, bottom: 5 },
+    })
+      .setInteractive()
+      .setOrigin(0, 0)
+      .setShadow(2, 2, '#000000', 0, true, true);
+    
+    backButton.on('pointerdown', () => {
+    this.scene.start('LobbyScene');
+    });
     const title = this.add.text(this.cameras.main.centerX, 40, pass.title.toUpperCase(), PASS_DETAILS_TITLE_STYLE)
       .setOrigin(0.5)
       .setShadow(2, 2, '#000000', 0, true, true);

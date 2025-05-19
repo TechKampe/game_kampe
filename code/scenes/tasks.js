@@ -17,6 +17,21 @@ class TasksScene extends Phaser.Scene {
     const spacing = 100;
     const topMargin = 180;
 
+    const backButton = this.add.text(20, 20, '← VOLVER', {
+        fontSize: '20px',
+        fontFamily: 'BurbankBigCondensed',
+        color: '#ffffff',
+        backgroundColor: '#0061b5',
+        padding: { left: 10, right: 10, top: 5, bottom: 5 },
+      })
+      .setInteractive()
+      .setOrigin(0, 0)
+      .setShadow(2, 2, '#000000', 0, true, true);
+      
+    backButton.on('pointerdown', () => {
+    this.scene.start('PassDetailsScene');
+    });
+
     // TITLE + PROGRESS
     const title = this.add.text(GAME_WIDTH / 2, 40, phase.title.toUpperCase(), {
       fontSize: '32px',
