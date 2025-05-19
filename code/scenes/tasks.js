@@ -12,6 +12,8 @@ class TasksScene extends Phaser.Scene {
   }
 
   create(data) {
+    loadTransition(this);
+
     const { phase } = data;
     const container = this.add.container(0, 0);
     const spacing = 100;
@@ -29,7 +31,7 @@ class TasksScene extends Phaser.Scene {
       .setShadow(2, 2, '#000000', 0, true, true);
       
     backButton.on('pointerdown', () => {
-    this.scene.start('PassDetailsScene');
+        unloadTransition(this, 'PassDetailsScene');
     });
 
     // TITLE + PROGRESS

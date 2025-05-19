@@ -12,6 +12,13 @@ class PassDetailsScene extends Phaser.Scene {
   }
 
   create(data) {
+    this.cameras.main.setAlpha(0);
+    this.tweens.add({
+      targets: this.cameras.main,
+      alpha: 1,
+      duration: FADING_TIME
+    });
+
     const { pass } = data;
     const container = this.add.container(0, 0);
 
@@ -27,8 +34,9 @@ class PassDetailsScene extends Phaser.Scene {
       .setShadow(2, 2, '#000000', 0, true, true);
     
     backButton.on('pointerdown', () => {
-    this.scene.start('LobbyScene');
+      unloadTransition(this, 'LobbyScene');
     });
+
     const title = this.add.text(this.cameras.main.centerX, 40, pass.title.toUpperCase(), PASS_DETAILS_TITLE_STYLE)
       .setOrigin(0.5)
       .setShadow(2, 2, '#000000', 0, true, true);
@@ -87,7 +95,7 @@ class PassDetailsScene extends Phaser.Scene {
     const viewAllButton = this.createButton(card.x + 140, y + 47, ' Ver todas', '16px', '#0061b5');
     const showTasksButton = this.createButton(card.x, y + 128, 'MOSTRAR TAREAS', '36px', 'transparent');
       showTasksButton.on('pointerup', () => {
-        this.scene.start('TasksScene', { phase });
+        prepareTransition(this, 'TasksScene', { phase });
       });
 
     container.add(viewAllButton);

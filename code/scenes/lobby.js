@@ -24,7 +24,7 @@ function createPassCard(scene, pass, y, container) {
 
   if (pass.unlocked) {
     image.setInteractive().on('pointerdown', () => {
-      scene.scene.start('PassDetailsScene', { pass }); // pass data to next scene
+      prepareTransition(scene, 'PassDetailsScene', { pass });
     });
 
     const progress = Math.floor((pass.tasksDone / pass.tasksMax) * 100);
@@ -51,6 +51,7 @@ function createPassCard(scene, pass, y, container) {
     lock.setTint(0x999999);
     container.add(lock);
   }
+
 }
 
 // === Scene ===
@@ -67,6 +68,13 @@ class LobbyScene extends Phaser.Scene {
   }
 
   create() {
+    this.cameras.main.setAlpha(0);
+      this.tweens.add({
+        targets: this.cameras.main,
+        alpha: 1,
+        duration: FADING_TIME
+      });
+
     const container = this.add.container(0, 0);
     const spacing = 250;
     const topMargin = 200;
