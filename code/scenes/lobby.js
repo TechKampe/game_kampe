@@ -44,6 +44,7 @@ class LobbyScene extends Phaser.Scene {
 
   preload() {
     this.load.image('logo', 'res/kampeLogo.png');
+    this.load.image('lobbyTitle', 'res/lobbyTitle.png');
     this.load.image('passCard1', 'res/passCard1.png');
     this.load.image('passCard2', 'res/passCard2.png');
     this.load.image('passCard3', 'res/passCard3.png');
@@ -62,22 +63,10 @@ class LobbyScene extends Phaser.Scene {
 
     const container = this.add.container(0, 0);
     const spacing = 500;
-    const topMargin = 680;
+    const topMargin = 540;
 
-    const scaleFactor = this.scale.displayScale.x;
-    const imageLogo = this.add.image(GAME_WIDTH / 2, 120, 'logo');
-    container.add(imageLogo);
-
-    const title = this.add.text(this.cameras.main.centerX, 280, "TUS PLANES", TITLE_STYLE)
-      .setOrigin(0.5)
-      .setShadow(4, 4, '#000000', 0, true, true)
-      .setResolution(window.devicePixelRatio);
-    container.add(title);
-
-    const subtitle = this.add.text(this.cameras.main.centerX, 390, "Consigue tus objetivos profesionales gracias a los planes de Kämpe. ¡Ánimo!", SUBTITLE_STYLE)
-      .setOrigin(0.5)
-      .setShadow(4, 4, '#000000', 0, true, true);
-    container.add(subtitle);
+    const imageTitle = this.add.image(GAME_WIDTH / 2, 170, 'lobbyTitle');
+    container.add(imageTitle);
 
     careerPasses.forEach((pass, i) => {
       const y = topMargin + i * spacing;
