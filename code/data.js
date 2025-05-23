@@ -2,6 +2,7 @@ const careerPasses = [
   {
     id: 1,
     title: 'Plan de 100 días para introducirte en el mundo de los oficios',
+    image: 'passCard1',
     unlocked: true,
     tasksDone: 18,
     tasksMax: 50,
@@ -164,6 +165,7 @@ const careerPasses = [
   {
     id: 2,
     title: 'Plan tus primeros 100 días de trabajo',
+    image: 'passCard2',
     unlocked: false,
     tasksDone: 0,
     tasksMax: 1000,
@@ -171,6 +173,7 @@ const careerPasses = [
   {
     id: 3,
     title: 'Plan para ser Oficial de Primera en tu oficio',
+    image: 'passCard3',
     unlocked: false,
     tasksDone: 0,
     tasksMax: 1000,
@@ -178,6 +181,7 @@ const careerPasses = [
   {
     id: 4,
     title: 'Plan para ser Oficial de Segunda en tu oficio',
+    image: 'passCard4',
     unlocked: false,
     tasksDone: 0,
     tasksMax: 1000,

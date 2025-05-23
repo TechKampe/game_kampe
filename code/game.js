@@ -2,7 +2,7 @@ const config = {
   type: Phaser.AUTO,
   width: GAME_WIDTH,
   height: GAME_HEIGHT,
-  backgroundColor: '#0061b5',
+  backgroundColor: '#0A214D',
   parent: 'game',
   resolution: window.devicePixelRatio,
   scale: {

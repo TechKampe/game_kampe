@@ -1,41 +1,29 @@
-const GAME_WIDTH = window.innerWidth;
-const GAME_HEIGHT = window.innerHeight;
-const PROGRESS_BAR_WIDTH = 200;
-const PROGRESS_BAR_HEIGHT = 8;
+const GAME_WIDTH = 720;
+const GAME_HEIGHT = 1280;
+const PROGRESS_BAR_WIDTH = 350;
+const PROGRESS_BAR_HEIGHT = 16;
 const SHADOW_COLOR = '#444444';
+const FONT_TYPE = 'Panchang';
+const FONT_TYPE_BOLD = 'Panchang-Semibold';
+
 const TITLE_STYLE = {
-    fontSize: '45px',
-    fontFamily: 'BurbankBigCondensed',
-    color: '#ffffff',
+    fontSize: '65px',
+    fontFamily: FONT_TYPE_BOLD,
+    color: '#EDCD45',
     align: 'center',
   };
-  
-const PASS_TITLE_STYLE = {
-fontSize: '25px',
-fontFamily: 'BurbankBigCondensed',
-color: '#F7D810',
-align: 'center',
-wordWrap: { width: 180, useAdvancedWrap: true },
-};
+
+const SUBTITLE_STYLE = {
+    fontSize: '28px',
+    fontFamily: FONT_TYPE,
+    color: '#ffffff',
+    align: 'center',
+    wordWrap: { width: 679, useAdvancedWrap: true },
+  };
 
 const DETAILS_STYLE = {
-fontSize: '23px',
-fontFamily: 'BurbankBigCondensed',
-color: '#003466',
-align: 'center',
-};
-
-const LOCKED_TITLE_STYLE = {
-fontSize: '25px',
-fontFamily: 'BurbankBigCondensed',
-color: '#998101',
-align: 'center',
-wordWrap: { width: 180, useAdvancedWrap: true },
-};
-
-const CTA_STYLE = {
-fontSize: '35px',
-fontFamily: 'BurbankBigCondensed',
+fontSize: '16px',
+fontFamily: FONT_TYPE,
 color: '#003466',
 align: 'center',
 };
@@ -44,7 +32,7 @@ const SHADOW_SETTINGS = [2, 2, '#000000', 0, true, true];
 
 const PASS_DETAILS_TITLE_STYLE = {
     fontSize: '25px',
-    fontFamily: 'BurbankBigCondensed',
+    fontFamily: FONT_TYPE,
     color: '#ffffff',
     align: 'center',
     wordWrap: { width: 340, useAdvancedWrap: true },
