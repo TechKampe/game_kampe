@@ -2,11 +2,11 @@
 
 function createProgressBar(scene, x, y, width, height, percentage) {
   const bg = scene.add.graphics();
-  bg.fillStyle(0x333333, 1);
+  bg.fillStyle(0x008671, 1);
   bg.fillRoundedRect(0, 0, width, height, 8);
 
   const fg = scene.add.graphics();
-  fg.fillStyle(0x00cc66, 1);
+  fg.fillStyle(0x002253, 1);
   fg.fillRoundedRect(0, 0, (width * percentage) / 100, height, 8);
 
   return scene.add.container(x, y, [bg, fg]);
