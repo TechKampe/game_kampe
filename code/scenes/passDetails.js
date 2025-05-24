@@ -47,7 +47,7 @@ class PassDetailsScene extends Phaser.Scene {
       this.createPhaseCard(container, phase, y);
     });
 
-    this.enableScroll(container, PHASE_CARD_TOP_MARGIN + PHASE_CARD_SPACING * pass.phases.length);
+    enableScroll(this, container, PHASE_CARD_TOP_MARGIN + PHASE_CARD_SPACING * pass.phases.length);
   }
 
   createPhaseCard(container, phase, y) {
@@ -125,33 +125,7 @@ class PassDetailsScene extends Phaser.Scene {
     }).setOrigin(0.5).setInteractive();
   }
 
-  enableScroll(container, totalHeight) {
-    const maxScroll = Math.max(0, totalHeight - GAME_HEIGHT);
-    let isDragging = false;
-    let dragStartY = 0;
-    let containerStartY = 0;
-
-    this.input.on('pointerdown', (pointer) => {
-      isDragging = true;
-      dragStartY = pointer.y;
-      containerStartY = container.y;
-    });
-
-    this.input.on('pointerup', () => {
-      isDragging = false;
-    });
-
-    this.input.on('pointermove', (pointer) => {
-      if (isDragging) {
-        const delta = pointer.y - dragStartY;
-        container.y = Phaser.Math.Clamp(containerStartY + delta, -maxScroll, 0);
-      }
-    });
-
-    this.input.on('wheel', (pointer, gameObjects, deltaX, deltaY) => {
-      container.y = Phaser.Math.Clamp(container.y - deltaY * 0.5, -maxScroll, 0);
-    });
-  }
+  
 }
 
 window.PassDetailsScene = PassDetailsScene;
