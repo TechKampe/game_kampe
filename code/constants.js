@@ -1,29 +1,14 @@
-const GAME_WIDTH = 720;
-const GAME_HEIGHT = 1280;
-const PROGRESS_BAR_WIDTH = 350;
+const GAME_WIDTH = 1080;
+const GAME_HEIGHT = 1900;
+const PROGRESS_BAR_WIDTH = 500;
 const PROGRESS_BAR_HEIGHT = 16;
 const SHADOW_COLOR = '#444444';
 const FONT_TYPE = 'Panchang';
 const FONT_TYPE_BOLD = 'Panchang-Semibold';
 
-const TITLE_STYLE = {
-    fontSize: '65px',
-    fontFamily: FONT_TYPE_BOLD,
-    color: '#EDCD45',
-    align: 'center',
-  };
-
-const SUBTITLE_STYLE = {
-    fontSize: '28px',
-    fontFamily: FONT_TYPE,
-    color: '#ffffff',
-    align: 'center',
-    wordWrap: { width: 679, useAdvancedWrap: true },
-  };
-
 const DETAILS_STYLE = {
-fontSize: '16px',
-fontFamily: FONT_TYPE,
+fontSize: '23px',
+fontFamily: FONT_TYPE_BOLD,
 color: '#003466',
 align: 'center',
 };
@@ -45,9 +30,7 @@ const REWARD_RARITY_COLOR = {
   'ULTRA': '#FFD700'
 };
 
-const PHASE_CARD_WIDTH = 360;
-const PHASE_CARD_HEIGHT = 342;
-const PHASE_CARD_SPACING = 360;
-const PHASE_CARD_TOP_MARGIN = 260;
+const PHASE_CARD_SPACING = 720;
+const PHASE_CARD_TOP_MARGIN = 320;
 
 const FADING_TIME = 150;

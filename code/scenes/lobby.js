@@ -23,11 +23,10 @@ function createPassCard(scene, pass, y, container) {
 
     const progress = Math.floor((pass.tasksDone / pass.tasksMax) * 100);
 
-    const progressLabel = scene.add.text(image.x, image.y, `CONTINUAR PROGRESO: ${progress}%`, DETAILS_STYLE)
-      .setOrigin(0.39, -8.3)
+    const progressLabel = scene.add.text(image.x - 190, image.y + 205, `CONTINUAR PROGRESO: ${progress}%`, DETAILS_STYLE)
     container.add(progressLabel);
 
-    const progressBar = createProgressBar(scene, GAME_WIDTH / 2 - PROGRESS_BAR_WIDTH / 2 + 40, image.y + 160, PROGRESS_BAR_WIDTH, PROGRESS_BAR_HEIGHT, progress);
+    const progressBar = createProgressBar(scene, image.x - 190, image.y + 240, PROGRESS_BAR_WIDTH, PROGRESS_BAR_HEIGHT, progress);
     container.add(progressBar);
   } else {
     image.disableInteractive();
@@ -43,7 +42,6 @@ class LobbyScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('logo', 'res/kampeLogo.png');
     this.load.image('lobbyTitle', 'res/lobbyTitle.png');
     this.load.image('passCard1', 'res/passCard1.png');
     this.load.image('passCard2', 'res/passCard2.png');
@@ -62,10 +60,10 @@ class LobbyScene extends Phaser.Scene {
       });
 
     const container = this.add.container(0, 0);
-    const spacing = 500;
-    const topMargin = 540;
+    const spacing = 710;
+    const topMargin = 780;
 
-    const imageTitle = this.add.image(GAME_WIDTH / 2, 170, 'lobbyTitle');
+    const imageTitle = this.add.image(GAME_WIDTH / 2, 250, 'lobbyTitle');
     container.add(imageTitle);
 
     careerPasses.forEach((pass, i) => {

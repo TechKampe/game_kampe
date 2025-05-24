@@ -51,12 +51,12 @@ class PassDetailsScene extends Phaser.Scene {
   }
 
   createPhaseCard(container, phase, y) {
-    const card = this.add.image(GAME_WIDTH / 2, y, 'phaseCard').setDisplaySize(PHASE_CARD_WIDTH, PHASE_CARD_HEIGHT);
+    const card = this.add.image(GAME_WIDTH / 2, y, 'phaseCard');
     container.add(card);
 
     const title = this.add.text(card.x - 150, y - 140, phase.title.toUpperCase(), {
       fontSize: '22px',
-      fontFamily: 'BurbankBigCondensed',
+      fontFamily: FONT_TYPE,
       color: '#ffffff',
       wordWrap: { width: 150, useAdvancedWrap: true }
     }).setShadow(2, 2, '#000', 0, true, true);
@@ -64,7 +64,7 @@ class PassDetailsScene extends Phaser.Scene {
 
     const progressLabel = this.add.text(card.x - 155, y - 31, `${phase.tasksDone} / ${phase.tasksTotal}`, {
       fontSize: '17px',
-      fontFamily: 'BurbankBigCondensed',
+      fontFamily: FONT_TYPE,
       color: '#00ff66'
     });
     container.add(progressLabel);
