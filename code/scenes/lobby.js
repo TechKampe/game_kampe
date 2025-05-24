@@ -43,7 +43,7 @@ class LobbyScene extends Phaser.Scene {
 
     const container = this.add.container(0, 0);
     const spacing = 710;
-    const topMargin = 780;
+    const topMargin = TITLE_SPACING;
 
     const imageTitle = this.add.image(GAME_WIDTH / 2, 250, 'lobbyTitle');
     container.add(imageTitle);

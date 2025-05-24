@@ -69,3 +69,19 @@ function createProgressBar(scene, x, y, width, height, percentage) {
       container.y = Phaser.Math.Clamp(container.y - deltaY * 0.5, -maxScroll, 0);
     });
   }
+
+  function addBackButton(scene, backScene) {
+    const backButton = scene.add.text(0, 20, '< VOLVER', {
+      fontSize: '20px',
+      fontFamily: FONT_TYPE_BOLD,
+      color: '#ffffff',
+      padding: { left: 10, right: 10, top: 5, bottom: 5 },
+    })
+      .setInteractive()
+      .setOrigin(0, 0)
+      .setShadow(2, 2, '#000000', 0, true, true);
+
+    backButton.on('pointerdown', () => {
+      unloadTransition(scene, backScene);
+    });
+  }
