@@ -30,17 +30,17 @@ function prepareTransition(object, targetScene, payload) {
       });
 }
 
-function createProgressBar(scene, x, y, width, height, percentage) {
+function createProgressBar(scene, x, y, width, height, percentage, foregroundColor = 0x002253, backgroundColor = 0x008671) {
     const bg = scene.add.graphics();
-    bg.fillStyle(0x008671, 1);
+    bg.fillStyle(backgroundColor, 1);
     bg.fillRoundedRect(0, 0, width, height, 8);
-  
+
     const fg = scene.add.graphics();
-    fg.fillStyle(0x002253, 1);
+    fg.fillStyle(foregroundColor, 1);
     fg.fillRoundedRect(0, 0, (width * percentage) / 100, height, 8);
-  
+
     return scene.add.container(x, y, [bg, fg]);
-  }
+}
 
   function enableScroll(scene, container, totalHeight) {
     const maxScroll = Math.max(0, totalHeight - GAME_HEIGHT);

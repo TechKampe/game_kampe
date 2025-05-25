@@ -52,6 +52,30 @@ const BLANK_BUTTON_STYLE = {
   padding: { left: 10, right: 10, top: 5, bottom: 5 }
 };
 
+const TASKS_TITLE_STYLE = {
+  fontSize: '45px',
+  fontFamily: FONT_TYPE_BOLD,
+  color: '#FFD700'
+};
+
+const TASKS_PROGRESS_LABEL = {
+  fontSize: '30px',
+  fontFamily: FONT_TYPE_BOLD,
+  color: '#ffffff'
+};
+
+const TASK_TITLE_STYLE = {
+  fontSize: '24px',
+  fontFamily: FONT_TYPE_BOLD,
+  color: '#F3FEF9',
+  wordWrap: { width: 400, useAdvancedWrap: true }
+};
+
+const XP_STYLE = {
+  fontSize: '30px',
+  fontFamily: FONT_TYPE_BOLD,
+  color: '#14355D'
+};
 
 const REWARD_RARITY_COLOR = {
   'COMÚN': '#AAAAAA',
