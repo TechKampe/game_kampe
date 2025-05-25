@@ -16,6 +16,7 @@ class TasksScene extends Phaser.Scene {
 
     const { phase } = data;
     const container = this.add.container(0, 0);
+    
     const spacing = 100;
     const topMargin = 180;
 

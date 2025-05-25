@@ -37,6 +37,43 @@ class PassDetailsScene extends Phaser.Scene {
   }
 
   createPhaseCard(container, row, phase, y) {
+    const card = this.createInfoLabels(y, container, phase, row);
+
+    // Rewards
+    this.createRewards(y, phase, container);
+
+    // Buttons
+    this.createButtons(card, y, phase, container);
+  }
+
+  createButtons(card, y, phase, container) {
+    const viewAllButton = this.createButton(card.x + 450, y + 175, '      ');
+    const showTasksButton = this.createButton(card.x + 340, y + 25, '                          ');
+    showTasksButton.on('pointerup', () => {
+      prepareTransition(this, 'TasksScene', { phase });
+    });
+
+    container.add(viewAllButton);
+    container.add(showTasksButton);
+  }
+
+  createRewards(y, phase, container) {
+    const rewardSpacing = 225;
+    const startX = 133;
+    const rewardsY = y + 170;
+
+    phase.rewards.forEach((reward, index) => {
+      const rewardX = startX + index * rewardSpacing;
+      const rewardIcon = this.add.image(rewardX, rewardsY, reward.image).setOrigin(0.5);
+
+      const label = this.add.text(rewardX, rewardsY + 80, reward.rarity.toUpperCase(), RARITY_STYLE).setShadow(1, 1, '#008671', 0, true, true).setColor(REWARD_RARITY_COLOR[reward.rarity.toUpperCase()] || '#FFFFFF').setOrigin(0.5);
+
+      container.add(rewardIcon);
+      container.add(label);
+    });
+  }
+
+  createInfoLabels(y, container, phase, row) {
     const card = this.add.image(GAME_WIDTH / 2, y, 'phaseCard');
     container.add(card);
 
@@ -54,31 +91,7 @@ class PassDetailsScene extends Phaser.Scene {
 
     const progressPercent = Math.floor((phase.tasksDone / phase.tasksTotal) * 100);
     container.add(createProgressBar(this, card.x - 490 - 5, y - 0, 580, 20, progressPercent));
-
-    // Rewards
-    const rewardSpacing = 225;
-    const startX = 133;
-    const rewardsY = y + 170;
-
-    phase.rewards.forEach((reward, index) => {
-      const rewardX = startX + index * rewardSpacing;
-      const rewardIcon = this.add.image(rewardX, rewardsY, reward.image).setOrigin(0.5);
-
-      const label = this.add.text(rewardX, rewardsY + 80, reward.rarity.toUpperCase(), RARITY_STYLE).setShadow(1, 1, '#008671', 0, true, true).setColor(REWARD_RARITY_COLOR[reward.rarity.toUpperCase()] || '#FFFFFF').setOrigin(0.5);
-
-      container.add(rewardIcon);
-      container.add(label);
-    });
-
-    // Buttons
-    const viewAllButton = this.createButton(card.x + 450, y + 175, '      ');
-    const showTasksButton = this.createButton(card.x + 340, y + 25, '                          ');
-      showTasksButton.on('pointerup', () => {
-        prepareTransition(this, 'TasksScene', { phase });
-      });
-
-    container.add(viewAllButton);
-    container.add(showTasksButton);
+    return card;
   }
 
   createButton(x, y, text) {
