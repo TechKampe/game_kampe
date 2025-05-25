@@ -39,7 +39,7 @@ const RARITY_STYLE = {
   fontSize: '23px',
   fontFamily: FONT_TYPE_BOLD,
   align: 'center',
-  backgroundColor: 'rgba(0, 34, 83, 0.65)',
+  backgroundColor: '#1C475E',
   padding: { left: 10, right: 10, top: 5, bottom: 5 }
 };
 
@@ -55,9 +55,9 @@ const BLANK_BUTTON_STYLE = {
 
 const REWARD_RARITY_COLOR = {
   'COMÚN': '#AAAAAA',
-  'RARA': '#4169E1',
-  'ÉPICA': '#800080',
-  'ULTRA': '#FFD700'
+  'RARA': '#A9C0EE',
+  'ULTRA': '#75FB4C',
+  'ÉPICA': '#FFD700'
 };
 
 
