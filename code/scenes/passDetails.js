@@ -33,7 +33,7 @@ class PassDetailsScene extends Phaser.Scene {
       this.createPhaseCard(container, i + 1, phase, y);
     });
 
-    enableScroll(this, container, TITLE_SPACING + PHASE_CARD_SPACING * pass.phases.length);
+    enableScroll(this, container, TITLE_SPACING + PHASE_CARD_SPACING * pass.phases.length - PHASE_CARD_SPACING / 2);
   }
 
   createPhaseCard(container, row, phase, y) {
