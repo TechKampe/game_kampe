@@ -11,10 +11,10 @@ function createPassCard(scene, pass, y, container) {
 
     const progress = Math.floor((pass.tasksDone / pass.tasksMax) * 100);
 
-    const progressLabel = scene.add.text(image.x - 190, image.y + 205, `CONTINUAR PROGRESO: ${progress}%`, DETAILS_STYLE)
+    const progressLabel = scene.add.text(image.x - 225, image.y + 160, `CONTINUAR PROGRESO: ${progress}%`, DETAILS_STYLE)
     container.add(progressLabel);
 
-    const progressBar = createProgressBar(scene, image.x - 190, image.y + 240, PROGRESS_BAR_WIDTH, PROGRESS_BAR_HEIGHT, progress);
+    const progressBar = createProgressBar(scene, image.x - 225, image.y + 193, PROGRESS_BAR_WIDTH, PROGRESS_BAR_HEIGHT, progress);
     container.add(progressBar);
   } else {
     image.disableInteractive();
@@ -42,7 +42,7 @@ class LobbyScene extends Phaser.Scene {
     loadTransition(this);
 
     const container = this.add.container(0, 0);
-    const spacing = 710;
+    const spacing = LOBBY_CARD_SPACING;
     const topMargin = TITLE_SPACING;
 
     const imageTitle = this.add.image(GAME_WIDTH / 2, 250, 'lobbyTitle');
@@ -53,7 +53,7 @@ class LobbyScene extends Phaser.Scene {
       createPassCard(this, pass, y, container);
     });
 
-    enableScroll(this, container, topMargin + spacing * careerPasses.length);
+    enableScroll(this, container, topMargin + spacing * careerPasses.length - spacing / 2);
   }
 }
 

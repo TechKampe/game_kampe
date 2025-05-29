@@ -1,6 +1,6 @@
 const GAME_WIDTH = 1080;
 const GAME_HEIGHT = 1900;
-const PROGRESS_BAR_WIDTH = 500;
+const PROGRESS_BAR_WIDTH = 460;
 const PROGRESS_BAR_HEIGHT = 16;
 const SHADOW_COLOR = '#444444';
 const FONT_TYPE = 'Panchang';
@@ -8,9 +8,10 @@ const FONT_TYPE_BOLD = 'Panchang-Semibold';
 const FADING_TIME = 150;
 const TITLE_SPACING = 780;
 const PHASE_CARD_SPACING = 720;
+const LOBBY_CARD_SPACING = 630;
 
 const DETAILS_STYLE = {
-  fontSize: '23px',
+  fontSize: '21px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#003466',
   align: 'center',
