@@ -64,7 +64,7 @@ class TasksScene extends Phaser.Scene {
     ];
 
     icons.forEach((icon, i) => {
-      const iconX = 780 + i * 235;
+      const iconX = 748 + i * 240;
 
       const txt = this.add.text(iconX, y - 0, `${icon.value}`, XP_STYLE).setOrigin(0.5);
       container.add(txt);

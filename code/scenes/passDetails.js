@@ -7,7 +7,7 @@ class PassDetailsScene extends Phaser.Scene {
     this.load.image('phasesTitle', 'res/phasesTitle.png');
     this.load.font(FONT_TYPE_BOLD, 'res/Panchang-Semibold.otf', 'opentype');
     this.load.image('phaseCard', 'res/phaseCard.png');
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 20; i++) {
       const num = i.toString().padStart(3, '0');
       this.load.image(`res/reward_${num}.png`, `res/reward_${num}.png`);
     }
@@ -80,7 +80,10 @@ class PassDetailsScene extends Phaser.Scene {
     const title = this.add.text(card.x - 490, y - 250, phase.title.toUpperCase(), PHASE_TITLE_STYLE).setShadow(2, 2, '#000000', 0, true, true);
     container.add(title);
 
-    const avatar = this.add.image(card.x + 350, y - 143, `avatar${row}`);
+    const description = this.add.text(card.x - 490, y - 180 , phase.description.toUpperCase(), PHASE_DESCRIPTION_STYLE).setShadow(2, 2, '#000000', 0, true, true);
+    container.add(description);
+
+    const avatar = this.add.image(card.x + 350, y - 143, `avatar${row % 4 +1}`);
     container.add(avatar);
 
     const progressValueLabel = this.add.text(card.x - 490, y - 35, `${phase.tasksDone} / ${phase.tasksTotal}`, PROGRESS_VALUE_STYLE).setShadow(2, 2, '#000000', 0, true, true);

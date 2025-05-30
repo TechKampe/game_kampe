@@ -39,21 +39,23 @@ class LobbyScene extends Phaser.Scene {
   }
 
   create() {
-    loadTransition(this);
+    loadCareerPasses().then((careerPasses) => {
+      loadTransition(this);
 
-    const container = this.add.container(0, 0);
-    const spacing = LOBBY_CARD_SPACING;
-    const topMargin = TITLE_SPACING;
+      const container = this.add.container(0, 0);
+      const spacing = LOBBY_CARD_SPACING;
+      const topMargin = TITLE_SPACING;
 
-    const imageTitle = this.add.image(GAME_WIDTH / 2, 250, 'lobbyTitle');
-    container.add(imageTitle);
+      const imageTitle = this.add.image(GAME_WIDTH / 2, 250, 'lobbyTitle');
+      container.add(imageTitle);
 
-    careerPasses.forEach((pass, i) => {
-      const y = topMargin + i * spacing;
-      createPassCard(this, pass, y, container);
+      careerPasses.forEach((pass, i) => {
+        const y = topMargin + i * spacing;
+        createPassCard(this, pass, y, container);
+      });
+
+      enableScroll(this, container, topMargin + spacing * careerPasses.length - spacing / 2);
     });
-
-    enableScroll(this, container, topMargin + spacing * careerPasses.length - spacing / 2);
   }
 }
 

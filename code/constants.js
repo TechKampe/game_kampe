@@ -18,6 +18,13 @@ const DETAILS_STYLE = {
 };
 
 const PHASE_TITLE_STYLE = {
+  fontSize: '60px',
+  fontFamily: FONT_TYPE_BOLD,
+  color: '#FBCA00',
+  wordWrap: { width: 600, useAdvancedWrap: true }
+};
+
+const PHASE_DESCRIPTION_STYLE = {
   fontSize: '43px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#FBCA00',
