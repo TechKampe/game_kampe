@@ -1,3 +1,7 @@
+import Phaser from 'phaser';
+import { GAME_WIDTH, TASKS_TITLE_STYLE, TASKS_PROGRESS_LABEL, TASK_TITLE_STYLE, XP_STYLE } from '../constants.js';
+import { loadTransition, createProgressBar, enableScroll, addBackButton } from '../utils.js';
+
 class TasksScene extends Phaser.Scene {
   constructor() {
     super('TasksScene');

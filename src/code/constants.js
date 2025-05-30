@@ -1,49 +1,49 @@
-const GAME_WIDTH = 1080;
-const GAME_HEIGHT = 1900;
-const PROGRESS_BAR_WIDTH = 460;
-const PROGRESS_BAR_HEIGHT = 16;
-const SHADOW_COLOR = '#444444';
-const FONT_TYPE = 'Panchang';
-const FONT_TYPE_BOLD = 'Panchang-Semibold';
-const FADING_TIME = 150;
-const TITLE_SPACING = 780;
-const PHASE_CARD_SPACING = 720;
-const LOBBY_CARD_SPACING = 630;
+export const GAME_WIDTH = 1080;
+export const GAME_HEIGHT = 1900;
+export const PROGRESS_BAR_WIDTH = 460;
+export const PROGRESS_BAR_HEIGHT = 16;
+export const SHADOW_COLOR = '#444444';
+export const FONT_TYPE = 'Panchang';
+export const FONT_TYPE_BOLD = 'Panchang-Semibold';
+export const FADING_TIME = 150;
+export const TITLE_SPACING = 780;
+export const PHASE_CARD_SPACING = 720;
+export const LOBBY_CARD_SPACING = 630;
 
-const DETAILS_STYLE = {
+export const DETAILS_STYLE = {
   fontSize: '21px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#003466',
   align: 'center',
 };
 
-const PHASE_TITLE_STYLE = {
+export const PHASE_TITLE_STYLE = {
   fontSize: '60px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#FBCA00',
   wordWrap: { width: 600, useAdvancedWrap: true }
 };
 
-const PHASE_DESCRIPTION_STYLE = {
+export const PHASE_DESCRIPTION_STYLE = {
   fontSize: '43px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#FBCA00',
   wordWrap: { width: 600, useAdvancedWrap: true }
 };
 
-const PROGRESS_VALUE_STYLE = {
+export const PROGRESS_VALUE_STYLE = {
   fontSize: '23px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#ffffff',
 };
 
-const PROGRESS_STYLE = {
+export const PROGRESS_STYLE = {
   fontSize: '23px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#002253',
 };
 
-const RARITY_STYLE = {
+export const RARITY_STYLE = {
   fontSize: '23px',
   fontFamily: FONT_TYPE_BOLD,
   align: 'center',
@@ -51,7 +51,7 @@ const RARITY_STYLE = {
   padding: { left: 10, right: 10, top: 5, bottom: 5 }
 };
 
-const BLANK_BUTTON_STYLE = {
+export const BLANK_BUTTON_STYLE = {
   fontSize: '32px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#ffffff',
@@ -60,32 +60,32 @@ const BLANK_BUTTON_STYLE = {
   padding: { left: 10, right: 10, top: 5, bottom: 5 }
 };
 
-const TASKS_TITLE_STYLE = {
+export const TASKS_TITLE_STYLE = {
   fontSize: '45px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#FFD700'
 };
 
-const TASKS_PROGRESS_LABEL = {
+export const TASKS_PROGRESS_LABEL = {
   fontSize: '30px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#ffffff'
 };
 
-const TASK_TITLE_STYLE = {
+export const TASK_TITLE_STYLE = {
   fontSize: '24px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#F3FEF9',
   wordWrap: { width: 400, useAdvancedWrap: true }
 };
 
-const XP_STYLE = {
+export const XP_STYLE = {
   fontSize: '30px',
   fontFamily: FONT_TYPE_BOLD,
   color: '#14355D'
 };
 
-const REWARD_RARITY_COLOR = {
+export const REWARD_RARITY_COLOR = {
   'COMÚN': '#AAAAAA',
   'RARA': '#A9C0EE',
   'ULTRA': '#75FB4C',

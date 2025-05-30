@@ -1,5 +1,5 @@
-const API_BASE = "http://localhost:8000";
-
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
+console.log("Raw response: ", API_BASE);
 const PHASE_LABELS = {
   "Fase 1": "Introducción",
   "Fase 2": "Documentación",
@@ -44,7 +44,7 @@ const PHASE_REWARDS = {
   ]
 };
 
-async function loadCareerPasses(userId) {
+export async function loadCareerPasses(userId) {
   const [tasksRes, progressRes] = await Promise.all([
     fetch(`${API_BASE}/api/users/${userId}/tasks`),
     fetch(`${API_BASE}/api/phase-progress/${userId}`)

@@ -1,3 +1,8 @@
+import Phaser from 'phaser';
+import { GAME_WIDTH, GAME_HEIGHT, FONT_TYPE_BOLD, DETAILS_STYLE, PROGRESS_BAR_WIDTH, LOBBY_CARD_SPACING, TITLE_SPACING, PROGRESS_BAR_HEIGHT } from '../constants.js';
+import { loadTransition, createProgressBar, enableScroll, prepareTransition } from '../utils.js';
+import { loadCareerPasses } from '../data.js';
+
 // === UI Builders ===
 
 function createPassCard(scene, pass, y, container) {

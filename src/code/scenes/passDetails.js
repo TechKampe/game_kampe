@@ -1,3 +1,7 @@
+import Phaser from 'phaser';
+import { GAME_WIDTH, FONT_TYPE_BOLD, PHASE_TITLE_STYLE, PHASE_DESCRIPTION_STYLE, PHASE_CARD_SPACING, TITLE_SPACING, PROGRESS_VALUE_STYLE, PROGRESS_STYLE, RARITY_STYLE, REWARD_RARITY_COLOR, BLANK_BUTTON_STYLE } from '../constants.js';
+import { loadTransition, createProgressBar, enableScroll, prepareTransition, addBackButton } from '../utils.js';
+
 class PassDetailsScene extends Phaser.Scene {
   constructor() {
     super('PassDetailsScene');

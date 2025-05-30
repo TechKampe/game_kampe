@@ -1,3 +1,5 @@
+import { GAME_WIDTH, GAME_HEIGHT } from './constants.js';
+
 const config = {
   type: Phaser.AUTO,
   width: GAME_WIDTH,
