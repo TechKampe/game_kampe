@@ -1,5 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
-console.log("Raw response: ", API_BASE);
+const API_BASE = import.meta.env.VITE_API_URL;
+
 const PHASE_LABELS = {
   "Fase 1": "Introducción",
   "Fase 2": "Documentación",
