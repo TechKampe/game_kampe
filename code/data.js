@@ -1,4 +1,3 @@
-const USER_ID = 78; // your actual user ID
 const API_BASE = "http://localhost:8000";
 
 const PHASE_LABELS = {
@@ -45,10 +44,10 @@ const PHASE_REWARDS = {
   ]
 };
 
-async function loadCareerPasses() {
+async function loadCareerPasses(userId) {
   const [tasksRes, progressRes] = await Promise.all([
-    fetch(`${API_BASE}/api/users/${USER_ID}/tasks`),
-    fetch(`${API_BASE}/api/phase-progress/${USER_ID}`)
+    fetch(`${API_BASE}/api/users/${userId}/tasks`),
+    fetch(`${API_BASE}/api/phase-progress/${userId}`)
   ]);
 
   const tasks = await tasksRes.json();
@@ -99,7 +98,7 @@ async function loadCareerPasses() {
       image: 'passCard2',
       unlocked: false,
       tasksDone: 0,
-      tasksMax: 1000
+      tasksMax: 0
     },
     {
       id: 3,
@@ -107,7 +106,7 @@ async function loadCareerPasses() {
       image: 'passCard3',
       unlocked: false,
       tasksDone: 0,
-      tasksMax: 1000
+      tasksMax: 0
     },
     {
       id: 4,
@@ -115,7 +114,7 @@ async function loadCareerPasses() {
       image: 'passCard4',
       unlocked: false,
       tasksDone: 0,
-      tasksMax: 1000
+      tasksMax: 0
     }
   ];
 }
