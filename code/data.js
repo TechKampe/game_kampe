@@ -18,128 +18,110 @@ const careerPasses = [
           {
             title: "Primera sesión con el coach",
             is_active: true,
-            reward_xp_empleabilidad: 5,
-            reward_xp_formacion: 2,
-            reward_xp_comunidad: 10
+            reward_stars: 2,
+            reward_xp: 10
           },
           {
             title: "Por donde comenzar",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Descripción de los oficios",
             is_active: false,
-            reward_xp_empleabilidad: 5,
-            reward_xp_formacion: 15,
-            reward_xp_comunidad: 0
+            reward_stars: 15,
+            reward_xp: 0
           },
           {
             title: "Currículum preparado",
             is_active: true,
-            reward_xp_empleabilidad: 15,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 0
+            reward_stars: 5,
+            reward_xp: 0
           },
           {
             title: "Preparación de presentación personal",
             is_active: false,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Videocurrículum grabado",
             is_active: true,
-            reward_xp_empleabilidad: 15,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 0
+            reward_stars: 5,
+            reward_xp: 0
           },
           {
             title: "DNI escaneado",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Cuenta bancaria",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Número Seguridad Social",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Permiso de trabajo",
             is_active: false,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Cursos y títulos",
             is_active: false,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Demanda de empleo",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Garantía juvenil",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Formación adecuada",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "PRLs y básicos",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Curso básico de oficios",
             is_active: true,
-            reward_xp_empleabilidad: 5,
-            reward_xp_formacion: 15,
-            reward_xp_comunidad: 0
+            reward_stars: 15,
+            reward_xp: 0
           },
           {
             title: "Carnet de conducir",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           },
           {
             title: "Conociendo las ofertas",
             is_active: true,
-            reward_xp_empleabilidad: 10,
-            reward_xp_formacion: 5,
-            reward_xp_comunidad: 5
+            reward_stars: 5,
+            reward_xp: 5
           }
         ]
       },

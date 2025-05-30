@@ -40,7 +40,7 @@ class TasksScene extends Phaser.Scene {
       this.createTaskCard(container, task, y);
     });
 
-    enableScroll(this, container, TOP_MARGIN + phase.tasks.length * TASK_CARD_SPACING);
+    enableScroll(this, container, TOP_MARGIN + phase.tasks.length * TASK_CARD_SPACING - TASK_CARD_SPACING / 2);
   }
 
   createTaskCard(container, task, y) {
@@ -59,13 +59,12 @@ class TasksScene extends Phaser.Scene {
 
     // XP Icons
     const icons = [
-      { key: 'xp_empleabilidad', value: task.reward_xp_empleabilidad },
-      { key: 'xp_formacion', value: task.reward_xp_formacion },
-      { key: 'xp_comunidad', value: task.reward_xp_comunidad }
+      { key: 'xp', value: task.reward_xp },
+      { key: 'stars', value: task.reward_stars }
     ];
 
     icons.forEach((icon, i) => {
-      const iconX = 684 + i * 166;
+      const iconX = 780 + i * 235;
 
       const txt = this.add.text(iconX, y - 0, `${icon.value}`, XP_STYLE).setOrigin(0.5);
       container.add(txt);
