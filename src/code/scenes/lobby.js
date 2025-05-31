@@ -29,7 +29,7 @@ function createPassCard(scene, pass, y, container) {
 
 // === Scene ===
 
-function getUserIdFromUrl() {
+function getTokenFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get("param");
 }
@@ -49,15 +49,11 @@ class LobbyScene extends Phaser.Scene {
   }
 
   create() {
-    const userId = getUserIdFromUrl();
-    if (!userId) {
-      this.add.text(GAME_WIDTH / 2, GAME_HEIGHT / 2, "Usuario no encontrado", PHASE_DESCRIPTION_STYLE).setOrigin(0.5);
-      return;
-    }
+    const token = getTokenFromUrl();
 
-    loadCareerPasses(userId).then((careerPasses) => {
-      // TODO: Add actual logic to filter unlocked passes
-      if (careerPasses[0].tasksMax === 0) {
+    loadCareerPasses(token).then((careerPasses) => {
+      const hasUnlocked = careerPasses.some(p => p.unlocked);
+      if (!hasUnlocked) {
         this.add.text(GAME_WIDTH / 2, GAME_HEIGHT / 2, "El usuario no tiene un plan asignado todavía", PHASE_DESCRIPTION_STYLE).setOrigin(0.5);
         return;
       }
