@@ -54,7 +54,7 @@ class LobbyScene extends Phaser.Scene {
     loadCareerPasses(token).then((careerPasses) => {
       const hasUnlocked = careerPasses.some(p => p.unlocked);
       if (!hasUnlocked) {
-        this.add.text(GAME_WIDTH / 2, GAME_HEIGHT / 2, "El usuario no tiene un plan asignado todavía", PHASE_DESCRIPTION_STYLE).setOrigin(0.5);
+        this.add.text(GAME_WIDTH / 2, GAME_HEIGHT / 2, "Todavía no tienes un plan de carrera.\n\nContacta con tu coach para preparar uno.\n\nSi no sabes quién es tu coach, escríbenos por el canal de Discord #plan-de-accion", PHASE_DESCRIPTION_STYLE).setOrigin(0.5);
         return;
       }
       
